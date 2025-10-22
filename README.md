@@ -1,6 +1,7 @@
 **Code 1 : GA_prediction_using_medblip_finetuning.py**
 
-This script fine-tunes the BLIP (Bootstrapped Language–Image Pretraining) model for gestational age (GA) prediction from neonatal chest X-ray images and clinical text prompts. It integrates text generation and regression objectives to jointly learn descriptive captioning and numerical GA estimation.
+This script fine-tunes the BLIP (Bootstrapped Language–Image Pretraining) model — a transformer-based vision–language framework for gestational age (GA) prediction from neonatal chest X-ray images and clinical text prompts.
+It jointly optimizes text generation and regression objectives to learn both descriptive radiology-style captioning and continuous GA estimation.
 
 **Key Features:**
 
@@ -21,8 +22,8 @@ Outputs generated reports, GA predictions, and evaluation metrics to CSV.
 Model base: nathansutton/generate-cxr
 
 Dependencies: transformers, torch, evaluate, spacy, PIL, pandas, scikit-learn
-**
-Code 2 :  Stable_diffusion_model_training_finetuning.py**
+
+**Code 2 :  Stable_diffusion_model_training_finetuning.py**
 
 This script fine-tunes and trains a Stable Diffusion UNet model for neonatal chest X-ray image generation from clinical text prompts. It combines masked-region supervision with diffusion-based reconstruction to improve spatial fidelity and semantic alignment between prompts and generated images.
 
