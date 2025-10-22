@@ -1,4 +1,4 @@
-# 🧠 Neonatal Vision–Language and Diffusion Training Pipelines
+# Neonatal Vision–Language and Diffusion Training Pipelines
 
 This repository contains two complementary deep learning pipelines for neonatal chest X-ray research:
 
@@ -7,12 +7,12 @@ This repository contains two complementary deep learning pipelines for neonatal 
 
 ---
 
-## 🚼 **Code 1: `GA_prediction_using_medblip_finetuning.py`**
+## **Code 1: `GA_prediction_using_medblip_finetuning.py`**
 
 This script fine-tunes the **BLIP (Bootstrapped Language–Image Pretraining)** model — a **transformer-based vision–language framework** — for **gestational age (GA) prediction** from neonatal chest X-ray images and clinical text prompts.  
 It jointly optimizes **text generation** and **regression** objectives to learn both descriptive radiology-style captioning and continuous GA estimation.
 
-### 🔹 Key Features
+### Key Features
 - **Transformer-based multimodal encoder–decoder architecture (BLIP)** integrating a **Vision Transformer (ViT)** and **text transformer** for cross-modal understanding.  
 - **Custom CXR dataset class** with on-the-fly augmentations and tokenized text prompts.  
 - **Dual-loss optimization** combining:  
@@ -22,7 +22,7 @@ It jointly optimizes **text generation** and **regression** objectives to learn 
 - **Evaluation metrics:** BLEU, ROUGE-L, BERTScore, and entity-level F1.  
 - **Outputs:** generated reports, GA predictions, and evaluation metrics saved as CSV.
 
-### 🧩 Model Base
+### Model Base
 `nathansutton/generate-cxr` — BLIP architecture fine-tuned for medical imaging and report generation.
 
 ### ⚙️ Dependencies
@@ -30,7 +30,7 @@ It jointly optimizes **text generation** and **regression** objectives to learn 
 
 ---
 
-## 🌈 **Code 2: `Stable_diffusion_model_training_finetuning.py`**
+## **Code 2: `Stable_diffusion_model_training_finetuning.py`**
 
 This script fine-tunes and trains a **Stable Diffusion UNet** model for **neonatal chest X-ray image generation** from clinical text prompts.  
 It integrates **mask-region supervision** with **diffusion-based reconstruction** to enhance both spatial fidelity and semantic alignment between text and generated images.
@@ -48,12 +48,12 @@ It integrates **mask-region supervision** with **diffusion-based reconstruction*
 - **Final test generation** step producing synthetic X-rays conditioned on text prompts.  
 - **Deterministic, reproducible training** using fixed seeds and controlled logging.
 
-### 💾 Outputs
+### Outputs
 - **Checkpoints:** `checkpoints/unet_epoch_*.pt` and `optimizer_epoch_*.pt`  
 - **Metrics:** stored in `generated_images_masks_july6/metrics.csv`  
 - **Generated Images:** saved under `generated_images_masks_july6/testset_gen/`
 
-### 🧩 Model Base
+### Model Base
 - **Stable Diffusion backbone:** `/home/sshome/roentgen_project/roentgen`  
 - **Fine-tuned BLIP captioner for neonatal CXRs:** `/home/sshome/roentgen_project/blip_finetuned/final`
 
